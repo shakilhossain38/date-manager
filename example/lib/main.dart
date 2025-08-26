@@ -10,6 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text("DateFormatter Example")),
@@ -19,51 +21,99 @@ class MyApp extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text('Current DateTime: $now'),
+                const SizedBox(height: 10),
+
+                // Numeric Formats
                 Text('Numeric Formats:'),
                 Text(
-                  'Default Short Date: ${DateManager.format(DateTime.now(), DateManager.shortDate)}',
+                  'shortDate: ${DateManager.format(now, DateManager.shortDate)}',
                 ),
                 Text(
-                  'US Short Date: ${DateManager.format(DateTime.now(), DateManager.shortDateUS)}',
+                  'shortDate2Digit: ${DateManager.format(now, DateManager.shortDate2Digit)}',
                 ),
                 Text(
-                  'ISO Date: ${DateManager.format(DateTime.now(), DateManager.isoDate)}',
+                  'shortDateUS: ${DateManager.format(now, DateManager.shortDateUS)}',
                 ),
                 Text(
-                  'Dash Date: ${DateManager.format(DateTime.now(), DateManager.shortDateDash)}',
+                  'shortDateUS2Digit: ${DateManager.format(now, DateManager.shortDateUS2Digit)}',
                 ),
                 Text(
-                  'Dash US Date: ${DateManager.format(DateTime.now(), DateManager.shortDateDashUS)}',
+                  'isoDate: ${DateManager.format(now, DateManager.isoDate)}',
                 ),
-                const SizedBox(height: 20),
+                Text(
+                  'shortDateDash: ${DateManager.format(now, DateManager.shortDateDash)}',
+                ),
+                Text(
+                  'shortDateDashUS: ${DateManager.format(now, DateManager.shortDateDashUS)}',
+                ),
+                const SizedBox(height: 10),
 
+                // Textual Formats
                 Text('Textual Formats:'),
                 Text(
-                  'Long Date: ${DateManager.format(DateTime.now(), DateManager.longDate)}',
+                  'longDate: ${DateManager.format(now, DateManager.longDate)}',
                 ),
                 Text(
-                  'Long Date US: ${DateManager.format(DateTime.now(), DateManager.longDateUS)}',
+                  'longDateUS: ${DateManager.format(now, DateManager.longDateUS)}',
                 ),
                 Text(
-                  'Abbreviated: ${DateManager.format(DateTime.now(), DateManager.longDateAbbr)}',
+                  'longDateAbbr: ${DateManager.format(now, DateManager.longDateAbbr)}',
                 ),
                 Text(
-                  'Abbreviated US: ${DateManager.format(DateTime.now(), DateManager.longDateAbbrUS)}',
+                  'longDateAbbrUS: ${DateManager.format(now, DateManager.longDateAbbrUS)}',
                 ),
                 Text(
-                  'Full Date: ${DateManager.format(DateTime.now(), DateManager.fullDate)}',
+                  'fullDate: ${DateManager.format(now, DateManager.fullDate)}',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
 
+                // Time Formats
+                Text('Time Formats:'),
                 Text(
-                  'Time Ago: ${DateManager.timeAgo(DateTime.now().subtract(const Duration(days: 1)))}',
+                  'shortTime24: ${DateManager.format(now, DateManager.shortTime24)}',
                 ),
                 Text(
-                  'Time Later: ${DateManager.timeLater(DateTime.now().add(const Duration(days: 3)))}',
+                  'shortTime12: ${DateManager.format(now, DateManager.shortTime12)}',
                 ),
-                const SizedBox(height: 20),
+                Text(
+                  'longTime24: ${DateManager.format(now, DateManager.longTime24)}',
+                ),
+                Text(
+                  'longTime12: ${DateManager.format(now, DateManager.longTime12)}',
+                ),
+                const SizedBox(height: 10),
 
-                Text('Parsed ISO Date: ${DateParser.parse("2025/08/25")}'),
+                // Date + Time
+                Text('Date + Time Formats:'),
+                Text(
+                  'dateTime24: ${DateManager.format(now, DateManager.dateTime24)}',
+                ),
+                Text(
+                  'dateTime12: ${DateManager.format(now, DateManager.dateTime12)}',
+                ),
+                Text(
+                  'dateTime24US: ${DateManager.format(now, DateManager.dateTime24US)}',
+                ),
+                Text(
+                  'dateTime12US: ${DateManager.format(now, DateManager.dateTime12US)}',
+                ),
+                Text(
+                  'longDateTime24: ${DateManager.format(now, DateManager.longDateTime24)}',
+                ),
+                Text(
+                  'longDateTime12: ${DateManager.format(now, DateManager.longDateTime12)}',
+                ),
+                const SizedBox(height: 10),
+
+                // Relative Time
+                Text('Relative Time:'),
+                Text(
+                  'Time ago: ${DateManager.timeAgo(now.subtract(const Duration(days: 1)))}',
+                ),
+                Text(
+                  'Time later: ${DateManager.timeLater(now.add(const Duration(hours: 5)))}',
+                ),
               ],
             ),
           ),
