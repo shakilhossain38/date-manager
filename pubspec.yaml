@@ -1,6 +1,6 @@
 name: date_manager
 description: A simple and easy-to-use date formatting and relative time utility for Flutter and Dart.
-version: 0.0.1
+version: 0.0.3
 homepage: https://github.com/shakilhossain38/date-manager
 
 environment:

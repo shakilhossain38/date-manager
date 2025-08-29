@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text("DateFormatter Example")),
+        appBar: AppBar(title: const Text("DateManager Example")),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: SingleChildScrollView(
@@ -25,7 +25,10 @@ class MyApp extends StatelessWidget {
                 const SizedBox(height: 10),
 
                 // Numeric Formats
-                Text('Numeric Formats:'),
+                Text(
+                  'Numeric Formats:',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
                 Text(
                   'shortDate: ${DateManager.format(now, DateManager.shortDate)}',
                 ),
@@ -42,6 +45,9 @@ class MyApp extends StatelessWidget {
                   'isoDate: ${DateManager.format(now, DateManager.isoDate)}',
                 ),
                 Text(
+                  'isoDateSlash: ${DateManager.format(now, DateManager.isoDateSlash)}',
+                ),
+                Text(
                   'shortDateDash: ${DateManager.format(now, DateManager.shortDateDash)}',
                 ),
                 Text(
@@ -50,7 +56,10 @@ class MyApp extends StatelessWidget {
                 const SizedBox(height: 10),
 
                 // Textual Formats
-                Text('Textual Formats:'),
+                Text(
+                  'Textual Formats:',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
                 Text(
                   'longDate: ${DateManager.format(now, DateManager.longDate)}',
                 ),
@@ -69,7 +78,10 @@ class MyApp extends StatelessWidget {
                 const SizedBox(height: 10),
 
                 // Time Formats
-                Text('Time Formats:'),
+                Text(
+                  'Time Formats:',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
                 Text(
                   'shortTime24: ${DateManager.format(now, DateManager.shortTime24)}',
                 ),
@@ -84,8 +96,11 @@ class MyApp extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
 
-                // Date + Time
-                Text('Date + Time Formats:'),
+                // Date + Time Formats
+                Text(
+                  'Date + Time Formats:',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
                 Text(
                   'dateTime24: ${DateManager.format(now, DateManager.dateTime24)}',
                 ),
@@ -99,6 +114,18 @@ class MyApp extends StatelessWidget {
                   'dateTime12US: ${DateManager.format(now, DateManager.dateTime12US)}',
                 ),
                 Text(
+                  'dateTime24IsoSlash: ${DateManager.format(now, DateManager.dateTime24IsoSlash)}',
+                ),
+                Text(
+                  'dateTime12IsoSlash: ${DateManager.format(now, DateManager.dateTime12IsoSlash)}',
+                ),
+                Text(
+                  'dateTime24Iso: ${DateManager.format(now, DateManager.dateTime24Iso)}',
+                ),
+                Text(
+                  'dateTime12Iso: ${DateManager.format(now, DateManager.dateTime12Iso)}',
+                ),
+                Text(
                   'longDateTime24: ${DateManager.format(now, DateManager.longDateTime24)}',
                 ),
                 Text(
@@ -107,7 +134,10 @@ class MyApp extends StatelessWidget {
                 const SizedBox(height: 10),
 
                 // Relative Time
-                Text('Relative Time:'),
+                Text(
+                  'Relative Time:',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
                 Text(
                   'Time ago: ${DateManager.timeAgo(now.subtract(const Duration(days: 1)))}',
                 ),

@@ -1,4 +1,3 @@
-/// Safe date parser utility
 import 'package:intl/intl.dart';
 
 import '../date_manager.dart';
@@ -20,8 +19,7 @@ class DateParser {
         parsed = DateFormat(pattern, locale).parseStrict(dateString);
       } else {
         // Try ISO first
-        parsed =
-            DateTime.tryParse(dateString) ??
+        parsed = DateTime.tryParse(dateString) ??
             // fallback to common patterns
             _tryCommonPatterns(dateString, locale) ??
             DateTime.now();

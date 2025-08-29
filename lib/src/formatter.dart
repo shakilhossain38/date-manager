@@ -21,8 +21,11 @@ class DateManager {
   /// US style, slash, 2-digit year: 08/25/25
   static const String shortDateUS2Digit = 'MM/dd/yy';
 
-  /// ISO date: 2025/08/25 (database-friendly)
-  static const String isoDate = 'yyyy/MM/dd';
+  /// ISO date (dash): 2025-09-27
+  static const String isoDate = 'yyyy-MM-dd';
+
+  /// ISO date (slash): 2025/09/27
+  static const String isoDateSlash = 'yyyy/MM/dd';
 
   /// Day-first, dash: 25-08-2025
   static const String shortDateDash = 'dd-MM-yyyy';
@@ -51,20 +54,62 @@ class DateManager {
   // --------------------------
   // Time formats
   // --------------------------
-  static const String shortTime24 = 'HH:mm'; // 14:30
-  static const String shortTime12 = 'hh:mm a'; // 02:30 PM
-  static const String longTime24 = 'HH:mm:ss'; // 14:30:15
-  static const String longTime12 = 'hh:mm:ss a'; // 02:30:15 PM
+  /// 24-hour format: 14:30
+  static const String shortTime24 = 'HH:mm';
+
+  /// 12-hour format: 02:30 PM
+  static const String shortTime12 = 'hh:mm a';
+
+  /// 24-hour format with seconds: 14:30:15
+  static const String longTime24 = 'HH:mm:ss';
+
+  /// 12-hour format with seconds: 02:30:15 PM
+  static const String longTime12 = 'hh:mm:ss a';
 
   // --------------------------
-  // Date + Time
+  // Date + Time formats
   // --------------------------
+  /// Day-first, 24-hour: 25/08/2025 14:30
   static const String dateTime24 = 'dd/MM/yyyy HH:mm';
+
+  /// Day-first, 12-hour: 25/08/2025 02:30 PM
   static const String dateTime12 = 'dd/MM/yyyy hh:mm a';
+
+  /// US style, 24-hour: 08/25/2025 14:30
   static const String dateTime24US = 'MM/dd/yyyy HH:mm';
+
+  /// US style, 12-hour: 08/25/2025 02:30 PM
   static const String dateTime12US = 'MM/dd/yyyy hh:mm a';
+
+  /// ISO, slash, 24-hour: 2025/08/25 14:30
+  static const String dateTime24IsoSlash = 'yyyy/MM/dd HH:mm';
+
+  /// ISO, slash, 12-hour: 2025/08/25 02:30 PM
+  static const String dateTime12IsoSlash = 'yyyy/MM/dd hh:mm a';
+
+  /// ISO, dash, 24-hour: 2025-08-25 14:30
+  static const String dateTime24Iso = 'yyyy-MM-dd HH:mm';
+
+  /// ISO, dash, 12-hour: 2025-08-25 02:30 PM
+  static const String dateTime12Iso = 'yyyy-MM-dd hh:mm a';
+
+  /// Full textual date, 24-hour with seconds: 25 August 2025 14:30:15
   static const String longDateTime24 = 'dd MMMM yyyy HH:mm:ss';
+
+  /// Full textual date, 12-hour with seconds: 25 August 2025 02:30:15 PM
   static const String longDateTime12 = 'dd MMMM yyyy hh:mm:ss a';
+
+  /// Short date + 24-hour time: 25/08/2025 14:30
+  static const String shortDateTime24 = 'dd/MM/yyyy HH:mm';
+
+  /// Short date + 12-hour time: 25/08/2025 02:30 PM
+  static const String shortDateTime12 = 'dd/MM/yyyy hh:mm a';
+
+  /// US style short date + 24-hour time: 08/25/2025 14:30
+  static const String shortDateTime24US = 'MM/dd/yyyy HH:mm';
+
+  /// US style short date + 12-hour time: 08/25/2025 02:30 PM
+  static const String shortDateTime12US = 'MM/dd/yyyy hh:mm a';
 
   // --------------------------
   // Formatting functions
