@@ -1,4 +1,4 @@
-## [0.0.3] - 2025-08-25
+## [0.0.3] - 2025-08-29
 ### Added
 - New ISO date formats:
   - `isoDateSlash` → `yyyy/MM/dd`
